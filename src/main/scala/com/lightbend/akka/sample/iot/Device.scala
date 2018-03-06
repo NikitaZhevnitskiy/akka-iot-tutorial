@@ -23,6 +23,7 @@ class Device(groupId: String, deviceId: String) extends Actor with ActorLogging 
 
   override def receive: Receive = {
 
+    // `groupId` works as this.groupId
     case DeviceManager.RequestTrackDevice(`groupId`, `deviceId`) =>
       sender() ! DeviceManager.DeviceRegistered
 
